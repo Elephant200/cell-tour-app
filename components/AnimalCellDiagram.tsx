@@ -18,27 +18,36 @@ const AnimalCellDiagram = () => {
   }, []);
 
   const labelAreas = [
-    { x: 50, y: 30, width: 100, height: 15, link: "/organelle/nucleus", name: "Nucleus" },
-    { x: 558, y: 158, width: 105, height: 15, link: "/organelle/mitochondria", name: "Mitochondria" },
-    { x: 70, y: 192, width: 110, height: 30, link: "/organelle/golgi", name: "Golgi Apparatus" },
-    { x: 558, y: 120, width: 100, height: 15, link: "/organelle/lysosome", name: "Lysosome" },
+    // Nucleus section
+    { x: 180, y: 7.5, width: 110, height: 100, link: "/organelle/nucleus", name: "Nucleus" },
+    { x: 200, y: 22.5, width: 90, height: 15, link: "/organelle/nuclear-pore", name: "Nuclear Pore" },
+    { x: 210, y: 37.5, width: 80, height: 15, link: "/organelle/chromatin", name: "Chromatin" },
+    { x: 185, y: 52.5, width: 105, height: 15, link: "/organelle/nuclear-envelope", name: "Nuclear Envelope" },
+    { x: 210, y: 82.5, width: 80, height: 15, link: "/organelle/nucleolus", name: "Nucleolus" },
+
+    // Left side
+    { x: 60, y: 172.5, width: 120, height: 15, link: "/organelle/plasma-membrane", name: "Plasma Membrane" },
+    { x: 70, y: 192.5, width: 110, height: 30, link: "/organelle/golgi", name: "Golgi Apparatus" }, 
     { x: 80, y: 230, width: 100, height: 15, link: "/organelle/ribosome", name: "Ribosome" },
-    { x: 220, y: 180, width: 130, height: 15, link: "/organelle/endoplasmic-reticulum", name: "ER" },
-    { x: 430, y: 200, width: 120, height: 15, link: "/organelle/cell-membrane", name: "Cell Membrane" },
-    { x: 558, y: 327, width: 90, height: 15, link: "/organelle/cytoplasm", name: "Cytoplasm" }, // DONE
-    { x: 560, y: 80, width: 100, height: 15, link: "/organelle/peroxisome", name: "Peroxisome" },
-    { x: 557, y: 365, width: 120, height: 30, link: "/organelle/centrosome", name: "Centrosome" },
-    { x: 380, y: 310, width: 120, height: 15, link: "/organelle/microtubules", name: "Microtubules" },
+    { x: 10, y: 250, width: 170, height: 15, link: "/organelle/rough-endoplasmic-reticulum", name: "Rough Endoplasmic Reticulum" },
+    { x: 0, y: 270, width: 180, height: 15, link: "/organelle/smooth-endoplasmic-reticulum", name: "Smooth Endoplasmic Reticulum" },
+    { x: 70, y: 290, width: 110, height: 15, link: "/organelle/cytoskeleton", name: "Actin Filaments" },
+    
+    // Right side (upper)
+    { x: 558, y: 80, width: 100, height: 15, link: "/organelle/peroxisome", name: "Peroxisome" },
+    { x: 558, y: 100, width: 100, height: 15, link: "/organelle/microtubules", name: "Microtubules" },
+    { x: 558, y: 120, width: 100, height: 15, link: "/organelle/lysosome", name: "Lysosome" },
+    { x: 558, y: 140, width: 110, height: 15, link: "/organelle/ribosome", name: "Free Ribosome" },
+    { x: 558, y: 159, width: 110, height: 15, link: "/organelle/mitochondria", name: "Mitochondrion" },
+    { x: 558, y: 178, width: 140, height: 15, link: "/organelle/cytoskeleton", name: "Intermediate Filaments" },
+
+    // Right side (lower)
+    { x: 558, y: 327, width: 90, height: 15, link: "/organelle/cytoplasm", name: "Cytoplasm" },    
     { x: 558, y: 346, width: 115, height: 15, link: "/organelle/secretory-vesicle", name: "Secretory Vesicle" },
-    { x: 50, y: 380, width: 100, height: 15, link: "/organelle/nucleolus", name: "Nucleolus" },
-    { x: 220, y: 400, width: 120, height: 15, link: "/organelle/chromatin", name: "Chromatin" },
-    { x: 60, y: 172, width: 120, height: 15, link: "/organelle/plasma-membrane", name: "Plasma Membrane" },
-    { x: 550, y: 450, width: 120, height: 15, link: "/organelle/glycocalyx", name: "Glycocalyx" },
-    { x: 40, y: 490, width: 100, height: 15, link: "/organelle/nuclear-membrane", name: "Nuclear Membrane" },
-    { x: 200, y: 510, width: 120, height: 15, link: "/organelle/microfilaments", name: "Microfilaments" },
-    { x: 400, y: 530, width: 120, height: 15, link: "/organelle/intermediate-filaments", name: "Intermediate Filaments" },
-    { x: 540, y: 600, width: 130, height: 15, link: "/organelle/inclusions", name: "Inclusions" },
-    { x: 50, y: 590, width: 100, height: 15, link: "/organelle/extracellular-matrix", name: "Extracellular Matrix" },
+    { x: 557, y: 365, width: 120, height: 30, link: "/organelle/centrosome", name: "Centrosome" },
+
+    // Bottom
+    { x: 270, y: 415, width: 80, height: 15, link: "/organelle/flagellum", name: "Flagellum" },
   ];
 
   return (
@@ -50,37 +59,26 @@ const AnimalCellDiagram = () => {
         {/* Clickable Label Areas */}
         {labelAreas.map((area, index) => (
           <React.Fragment key={index}>
-            {/* Label Name Above the Box */}
-            <Text
-              x={area.x}
-              y={area.y} // Position slightly above the rectangle
-              text={area.name}
-              fontSize={14}
-              fill="black"
-              fontStyle="bold"
-              align="center"
-              width={area.width}
-            />
             {/* Clickable Rectangle */}
             <Rect
               x={area.x}
               y={area.y}
               width={area.width}
               height={area.height}
-              fill="rgba(0, 0, 0, 0.3)" // Light blue for visibility
-              stroke="blue"
+              fill="rgba(0, 0, 0, 0)" // Light blue for visibility
+              //stroke="blue"
               strokeWidth={1}
               cornerRadius={4}
               onClick={() => router.push(area.link)}
               onMouseEnter={(e) => {
                 const stage = e.target.getStage();
                 if (stage) stage.container().style.cursor = "pointer";
-                e.target.setAttrs({ fill: "rgba(255, 0, 0, 0.5)" });
+                e.target.setAttrs({ fill: "rgba(255, 0, 0, 0)" });
               }}
               onMouseLeave={(e) => {
                 const stage = e.target.getStage();
                 if (stage) stage.container().style.cursor = "default";
-                e.target.setAttrs({ fill: "rgba(0, 0, 0, 0.3)" });
+                e.target.setAttrs({ fill: "rgba(0, 0, 0, 0)" });
               }}
             />
           </React.Fragment>

@@ -1,4 +1,4 @@
-import ClientAnimalCellDiagram from "@/components/ClientAnimalCellDiagram";
+import AnimalCellDiagramWrapper from "@/components/AnimalCellDiagramWrapper";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         Click on the labels to learn more about each organelle!
       </p>
       <div className="mt-6">
-        <ClientAnimalCellDiagram />
+        <AnimalCellDiagramWrapper />
       </div>
     </main>
   );
