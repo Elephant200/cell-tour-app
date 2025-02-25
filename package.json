@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "contentlayer2": "^0.5.4",
     "konva": "^9.3.18",
     "next": "15.1.6",
+    "next-contentlayer2": "^0.5.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-konva": "^19.0.2"

@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const { withContentlayer } = require('next-contentlayer')
+
 const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
     if (!config.resolve.fallback) {
@@ -11,4 +13,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = withContentlayer(nextConfig)
