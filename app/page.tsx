@@ -15,7 +15,7 @@ export default function Home() {
         <AnimalCellDiagramWrapper />
       </div>
       <br/>
-      {organelles.map((organelle: Organelle, idx: Number) => (
+      {organelles.map((organelle, idx) => (
         <OrganelleCard key={idx} {...organelle} />
       ))}
     </main>
