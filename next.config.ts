@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
-
-const { withContentlayer } = require('next-contentlayer')
+import { withContentlayer } from 'next-contentlayer2';
 
 const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
