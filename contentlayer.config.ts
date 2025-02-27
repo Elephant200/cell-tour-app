@@ -11,7 +11,7 @@ export const Organelle = defineDocumentType(() => ({
     animalCell: { type: 'boolean' },
     plantCell: { type: 'boolean' },
     membraneBound: { type: 'boolean' },
-    imageUrl: { type: 'string' }
+    image: { type: 'string' }
   },
   computedFields: {
     url: { type: 'string', resolve: (organelle) => `/organelles/${organelle._raw.flattenedPath}` },

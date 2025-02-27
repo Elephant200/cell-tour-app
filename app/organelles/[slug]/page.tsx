@@ -1,6 +1,7 @@
 import { allOrganelles } from 'contentlayer/generated'
 import { notFound } from 'next/navigation';
 import { getMDXComponent } from "next-contentlayer2/hooks";
+import Image from 'next/image';
 
 
 export default async function OrganellePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,6 +31,16 @@ export default async function OrganellePage({ params }: { params: Promise<{ slug
     return (
         <div className="container mx-auto p-6">
             <h1 className="text-4xl font-bold">{organelle.name}</h1>
+
+            <div className="flex justify-center my-6">
+                <Image 
+                    src={organelle.image!.trimEnd()} 
+                    alt={organelle.name} 
+                    width={300} 
+                    height={300} 
+                    className="rounded-lg shadow-md"
+                />
+            </div>
 
             <table className="w-full border border-gray-300 rounded-lg overflow-hidden shadow-sm">
                 <tbody>
