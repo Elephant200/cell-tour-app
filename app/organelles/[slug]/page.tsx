@@ -1,6 +1,7 @@
 import { allOrganelles } from 'contentlayer/generated'
-import { notFound } from 'next/navigation';
-import { getMDXComponent } from "next-contentlayer2/hooks";
+import { notFound } from 'next/navigation'
+import { getMDXComponent } from "next-contentlayer2/hooks"
+import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import Image from 'next/image';
 
 
